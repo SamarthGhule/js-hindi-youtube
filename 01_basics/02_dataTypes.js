@@ -18,7 +18,7 @@ let state;
 // bigint
 // string => ""
 // boolean => true/false
-// null => standalone value
+// null => standalone value and it means empty and not 0
 // undefined => 
 // symbol => unique
 
