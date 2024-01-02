@@ -29,7 +29,37 @@ let myObj = {
 }
 
 const myFunction = function(){
- console.log("Hello World")
+//  console.log("Hello World")
 }
 
-console.log(typeof heroes)
+// console.log(typeof heroes)
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+//Stack (used in Primitive datatypes)(Stack gets a copy to change variable) , 
+// Heap (used in Non-Primitive datatypes)(Heap gets reference to change variable so changes are reflected in original as well)
+
+//Stack
+
+let myYoutubename = "samarthghuledotcom"
+
+let anotherName = myYoutubename
+anotherName = "chaiaurcode"
+
+// console.log(myYoutubename)
+// console.log(anotherName)
+
+
+//Heap
+
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "samarth@google.com"
+
+console.log(userOne.email)
+console.log(userTwo.email)
