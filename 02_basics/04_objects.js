@@ -50,20 +50,20 @@ const obj4 = { 5:"a", 6:"b" }
 
 //Mostly object will be used this way when values are retrieved from database
 //The objects will come in form of array of objects
-const users = [
-    {
-       id: 11,
-       email: "h1@gmail.com"
-    },
-    {
-       id: 12,
-       email: "h2@gmail.com"
-    },
-    {
-       id: 13,
-       email: "h3@gmail.com"
-    },
-]
+// const users = [
+//     {
+//        id: 11,
+//        email: "h1@gmail.com"
+//     },
+//     {
+//        id: 12,
+//        email: "h2@gmail.com"
+//     },
+//     {
+//        id: 13,
+//        email: "h3@gmail.com"
+//     },
+// ]
 
 // console.log(users[0]) //{ id: 11, email: 'h1@gmail.com' }
 // console.log(tinderUser) //{ id: '123abc', name: 'Samarth', isLoggedIn: false }
@@ -97,7 +97,7 @@ const course = {
 
 //Another way to extract object values by giving different name
 const {courseInstructor: instructor} = course
-console.log(instructor) //Hitesh
+// console.log(instructor) //Hitesh
 
 
 //JSON Structure
@@ -109,8 +109,8 @@ console.log(instructor) //Hitesh
 // }
 
 //APIs can also found in array format containing objects
-[
- {},
- {}
-]
+// [
+//  {},
+//  {}
+// ]
 
