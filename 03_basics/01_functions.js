@@ -1,12 +1,12 @@
-function sayMyname(){
-    console.log("S")
-    console.log("A")
-    console.log("M")
-    console.log("A")
-    console.log("R")
-    console.log("T")
-    console.log("H")
-}
+// function sayMyname(){
+//     console.log("S")
+//     console.log("A")
+//     console.log("M")
+//     console.log("A")
+//     console.log("R")
+//     console.log("T")
+//     console.log("H")
+// }
 
 //Function calling
 // sayMyname() //Output below
@@ -104,6 +104,31 @@ function sayMyname(){
 
 
 //Object as argument
-const user = {
-    username: 
-}
+// const user = {
+//     username: "Samarth",
+//     price: 199
+// }
+
+// function handleObject(anyobject){
+//    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`)
+// }
+
+//Object as an argument
+// handleObject(user) //Username is Samarth and price is 199
+
+//Another method to pass object as argument
+// handleObject({       //Username is Sam and price is 399
+//     username: "Sam",
+//     price: 399
+// })
+
+//Array as argument
+// const myNewArray = [200, 400, 100, 600]
+
+// function returnSecondValue(getArray){
+//     return getArray[1]
+// }
+
+// console.log(returnSecondValue(myNewArray)) //400
+// console.log(returnSecondValue([0, 1, 2, 3, 4, 5])) //1
+
