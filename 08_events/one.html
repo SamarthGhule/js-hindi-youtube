@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            
+            <!-- Approach 1 to use onclick event -->
+            <!-- <li><img width="200px" onclick="alert('owl clicked')" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li> -->
+            
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+
+<script>
+    // Approach 2 to use onclick event
+    // document.getElementById('owl').onclick = function(){
+    //     alert("Owl Clicked")
+    // }
+
+    // Approach 3 to use onclick event (Best Approach)
+    // It's best as onclick doesn't give much information.
+    // Using addEventListener not only gives onclick functionality but also propogation ability
+    // document.getElementById('owl').addEventListener('click', function(){
+    //     alert("Owl clicked again")
+    // }, false)
+
+    //Main events to study
+    //type, timestamp, defaultPrevented
+    //target, toElement, srcElement, currentTarget
+    //clientX, clientY, screenX, screenY
+    //altkey, ctrlkey, shiftkey, keyCode
+
+
+    // Propagation refers to how events travel through the Document Object Model (DOM) tree. 
+    // The DOM tree is the structure which contains parent/child/sibling elements in relation 
+    // to each other.
+    // Bubbling and Capturing are the two phases of propagation. 
+    // In their simplest definitions, bubbling travels from the target to the root, 
+    // and capturing travels from the root to the target.
+    // The target is the DOM node on which you click, or trigger with any other event.
+    // The root is the highest-level parent of the target. This is usually the document.
+    
+    //Bubbling up example
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log('clicked inside the ul')
+    // })
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log('owl clicked')
+    //     e.stopPropagation() //To stop event propogation
+    // })
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     console.log('google clicked')
+        
+    // })
+
+    //Output (If images is clicked first)
+    //clicked inside the ul
+
+    //Output (If owl is clicked first)
+    //owl clicked
+    //clicked inside the ul (due to bubbling up)
+
+
+
+    //To remove particular images
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName)
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    }, false)
+    
+    //Another method to remove
+    // removeIt.parentNode.removeChild(removeIt)
+
+</script>
+
+</html>
