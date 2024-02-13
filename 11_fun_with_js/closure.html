@@ -1,0 +1,84 @@
+<!-- Closure in JavaScript is a form of lexical scoping used to preserve variables from 
+the outer scope of a function in the inner scope of a function. 
+Lexical scoping is the process used to define the scope of a variable by its position in 
+the source code. -->
+<!-- Closure is basically when a function is returned so not only the function is returned 
+but the whole lexical scope of function is returned -->
+
+<!-- Lexical scoping is a way of defining how variables and functions interact based on 
+their position within the code.
+Lexical scope is the ability for a function scope to access variables from the parent scope. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure aur chai</title>
+</head>
+<body style="background-color: #313131;">
+    <button id="orange">Orange</button>    
+    <button id="green">Green</button>    
+</body>
+
+    <script>
+    //     function init() {
+    //     let name = "Mozilla"; // name is a local variable created by init
+    //     function displayName() {
+    //     // displayName() is the inner function, that forms the closure
+    //     console.log(name); // use variable declared in the parent function
+    //     }
+    //     displayName();
+    //    }
+    //    init();
+
+    // function outer(){
+    //     let username = "hitesh"
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner", username);
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo", username);
+    //         // console.log(secret); (error `secret` cannot between brothers)
+    //     }
+    //     inner()
+    //     innerTwo()
+
+    // }
+    // outer()
+    // console.log(username);
+
+    function makeFunc(){
+        const name = "Mozilla"
+        function displayName(){
+            console.log(name);
+        }
+        return displayName; //Whole lexical scope is shared(Because whole memory is shared and not only the function executional context)
+    }
+    const myFunc = makeFunc()
+    myFunc()
+
+    </script>
+
+    <script>
+    // document.getElementById('orange').onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById('green').onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    // Implementation of closure and lexical scope in real-life scenerio
+    function clickHandler(color){
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('green').onclick = clickHandler('green')
+
+    </script>
+
+</html>
